@@ -1,0 +1,222 @@
+.projects-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-container.blur {
+  filter: blur(15px);
+  pointer-events: none;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.projects-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.new-project-button {
+  background-color: #004d40;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 198px;
+}
+
+.new-project-button:hover {
+  background-color: #00332e;
+}
+
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.projects-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #333;
+}
+
+.projects-table td {
+  color: #666;
+}
+
+.projects-table tr:last-child td {
+  border-bottom: none;
+}
+
+.action-button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.action-button.edit {
+  background-color: #004d40;
+  color: #fff;
+  font-size: 14px;
+}
+
+.action-button.edit:hover {
+  background-color: #00332e;
+}
+
+.action-button.delete {
+  background-color: #d32f2f;
+  color: #fff;
+  font-size: 14px;
+}
+
+.action-button.delete:hover {
+  background-color: #b71c1c;
+}
+
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 3;
+  width: 350px;
+}
+
+.modal-input {
+  width: 80%;
+  margin: 20px 0; /* увеличить отступ для красоты */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-button.cancel {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.modal-button.cancel:hover {
+  background-color: #b71c1c;
+}
+
+.modal-button.confirm {
+  background-color: #004d40;
+  color: white;
+}
+
+.modal-button.confirm:hover {
+  background-color: #00332e;
+}
+
+/* Для редактирования названия */
+.edit-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit-input {
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  max-width: 160px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.icon-button.edit-icon {
+  margin-left: 8px;
+  color: #006064; /* цвет иконки карандаша */
+}
+
+.icon-button.edit-icon:hover {
+  color: #004d40;
+}
+
+.icon-button.save-button {
+  color: #006400; /* цвет галочки */
+}
+
+.icon-button.save-button:hover {
+  color: #008000;
+}
+
+.icon-button.cancel-button {
+  color: #b71c1c; /* цвет крестика */
+}
+
+.icon-button.cancel-button:hover {
+  color: #d32f2f;
+}
+
+.sort-select {
+  padding: 8px;
+  font-size: 14px;
+  margin-right: 10px;
+}

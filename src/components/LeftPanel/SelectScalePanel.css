@@ -1,0 +1,19 @@
+.scale-select {
+  width: 100%; /* Занимает всю доступную ширину */
+  max-width: 400px; /* Максимальная ширина по необходимости */
+  white-space: normal; /* Разрешает перенос строк */
+  word-wrap: break-word; /* Перенос длинных слов */
+  padding: 5px; /* Отступы для удобства */
+  font-size: 14px; /* Размер шрифта */
+}
+
+/* Дополнительные стили при необходимости */
+.characteristic-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.characteristic-item.scale-chosen select {
+  border-color: #4caf50; /* Например, зелёная граница при выборе шкалы */
+}

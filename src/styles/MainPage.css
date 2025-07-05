@@ -1,0 +1,306 @@
+/* MainPage.css */
+
+/* Основной контейнер */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Заголовок и верхняя строка */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.main-header button {
+  background-color: #004d40;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.main-header button:hover {
+  background-color: #00332e;
+}
+
+/* Основной контент */
+.main-content {
+  display: flex;
+  gap: 20px;
+}
+
+/* Левая часть: Описание */
+.description-box {
+  flex: 2;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.description-box h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.description-box p,
+.description-box ul {
+  color: #666;
+  line-height: 1.6;
+}
+
+.description-box ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.description-box ul li {
+  list-style: disc;
+}
+
+/* Правая часть: Начало работы */
+.start-box {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.start-box h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.start-box .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.start-box .task:last-child {
+  margin-bottom: 0;
+}
+
+.start-box .task span {
+  color: #333;
+  font-size: 14px;
+}
+
+.start-box .task button {
+  background-color: #004d40;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 75px;
+}
+
+.start-box .task button:hover {
+  background-color: #00332e;
+}
+
+.main-container.blur {
+  filter: blur(15px);
+  pointer-events: none;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons button {
+  flex: 1;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+}
+
+@keyframes fadeOut {
+from {
+  opacity: 1;
+}
+to {
+  opacity: 0;
+}
+}
+
+@keyframes slideDown {
+from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+.form-container,
+.success-modal-container,
+.confirm-overlay {
+animation: fadeIn 0.3s ease-out forwards;
+}
+
+.form-container.closing,
+.success-modal-container.closing,
+.confirm-overlay.closing {
+animation: fadeOut 0.3s ease-out forwards;
+}
+
+.dropdown-menu {
+animation: slideDown 0.3s ease-out forwards;
+}
+
+.modal-enter {
+animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modal-exit {
+animation: fadeOut 0.3s ease-out forwards;
+}
+
+.dropdown-enter {
+animation: slideDown 0.3s ease-out forwards;
+}
+
+.spinner {
+border: 4px solid rgba(0, 0, 0, 0.1);
+width: 24px;
+height: 24px;
+border-radius: 50%;
+border-left-color: #004d40;
+animation: spin 1s linear infinite;
+}
+
+.spinner.center-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px; /* Увеличен в 3 раза */
+  height: 72px; /* Увеличен в 3 раза */
+  border-width: 6px; /* Увеличена ширина границы */
+}
+
+@keyframes spin {
+to {
+  transform: rotate(360deg);
+}
+}
+
+/* Стили для кнопок */
+.auth-buttons button {
+width: 120px; /* Установите фиксированную ширину по вашему усмотрению */
+height: 40px; /* Установите фиксированную высоту по вашему усмотрению */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* Стили для отключенных кнопок */
+.auth-buttons button:disabled {
+opacity: 0.6;
+cursor: not-allowed;
+}
+
+
+.auth-button-content {
+  visibility: visible; /* Всегда видимый текст */
+  opacity: 1; /* Полная непрозрачность текста */
+  transition: opacity 0.3s ease; /* Плавный переход */
+}
+
+.auth-button-content.hidden {
+  visibility: hidden; /* Скрыть элемент */
+  opacity: 0; /* Установить прозрачность */
+}
+
+/* Устранение мерцания текста */
+.auth-buttons button {
+  overflow: hidden; /* Убедитесь, что текст не выходит за границы */
+}
+
+
+.description-box {
+  flex: 2;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+.description-box h2 {
+  font-size: 24px;
+  color: #004d40;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.description-box p {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.description-box ul {
+  margin: 15px 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.description-box ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #000000;
+  position: relative;
+}
+
+.description-box ul li::before {
+  content: '•';
+  color: #009688;
+  font-size: 18px;
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+
+.description-box p:last-of-type {
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+}
+

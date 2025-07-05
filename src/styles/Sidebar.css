@@ -1,0 +1,135 @@
+.sidebar {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #004d40;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  transition: width 0.3s ease;
+  z-index: 1000; /* поверх прочего контента */
+  position: fixed;
+}
+
+.sidebar.closed {
+  width: 60px;
+}
+
+.sidebar.open {
+  width: 180px;
+}
+
+.toggle-button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s, transform 0.2s;
+  width: 100%;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu-item .icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.menu-item .icon {
+  font-size: 24px;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.menu-item:hover .icon-container {
+  background-color: #00695c;
+  transform: scale(0.9); /* Уменьшение размера иконки */
+}
+
+.menu-item:hover .icon {
+  transform: scale(0.9);
+}
+
+.menu-item.active .icon-container {
+  background-color: #ffffff;
+  color: #004d40;
+  transform: scale(1); /* Возврат к стандартному размеру */
+}
+
+.menu-item.active .icon {
+  color: #004d40;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Модалка confirmOverlay */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-dialog {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.cancel-button, .delete-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.delete-button {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+.cancel-button {
+  background-color: #004d40;
+  color: #fff;
+}

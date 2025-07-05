@@ -1,0 +1,80 @@
+/* ProfileMenu.css */
+
+.profile-menu-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .profile-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+  }
+  
+  .profile-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #004d40;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-weight: bold;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 60px; /* Подогнать под высоту кнопки */
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    width: 220px;
+    z-index: 9999;
+    padding: 10px;
+  }
+  
+  .user-info {
+    margin-bottom: 10px;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .user-email {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: background-color 0.2s;
+  }
+  
+  .menu-item.hovered {
+    background-color: #f0f0f0;
+  }
+  
+  .menu-icon {
+    margin-right: 8px;
+  }
+  

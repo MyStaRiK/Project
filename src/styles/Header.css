@@ -1,0 +1,163 @@
+/* Пример адаптирован под две строки: первая — top row, вторая — nav row. */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Название проекта */
+.resume-title-input {
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 40%;
+}
+
+/* Правая часть первой строки */
+.header-top-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Кнопка экспорта */
+.export-button {
+  background-color: #004d40;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.export-button:hover {
+  background-color: #00332e;
+}
+
+/* Меню */
+.menu-container {
+  position: relative;
+}
+.menu-button {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.menu-button:hover {
+  background-color: #f0f0f0;
+}
+.active-menu {
+  border-color: #000;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 140px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 999;
+}
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Вторая строка: вкладки + кнопки справа */
+.header-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.header-nav-left {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.2s;
+}
+.nav-button:hover {
+  background-color: #f0f0f0;
+}
+.nav-button.active {
+  background-color: #004d40;
+  color: #fff;
+}
+
+.header-nav-right {
+  display: flex;
+  gap: 10px;
+}
+
+.save-button-project {
+  background-color: #004d40;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 127px;
+}
+.save-button-project:hover {
+  background-color: #002e26;
+}
+
+.delete-button-project {
+  background-color: #ff1100;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 82px;
+}
+.delete-button-project:hover {
+  background-color: #b30000;
+}
+
+/* Disabled */
+.save-button-project:disabled,
+.delete-button-project:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

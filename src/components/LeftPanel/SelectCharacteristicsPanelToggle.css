@@ -1,0 +1,25 @@
+.select-char-toggle-button {
+    background-color: #004d40;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: auto; 
+    min-width: 60px;
+  }
+  
+  .select-char-toggle-button:hover {
+    background-color: #00332e;
+  }
+  
+  /* Контейнер для заголовка и кнопки */
+  .select-char-class-title {
+    display: flex;
+    align-items: center;    
+    margin-bottom: 10px; /* Отступ снизу для разделения блоков */
+    border-bottom: 1px solid #ccc; /* Разделительная линия */
+    padding-bottom: 5px; /* Внутренний отступ снизу */
+  }
+  

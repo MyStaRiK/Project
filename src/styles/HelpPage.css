@@ -1,0 +1,21 @@
+.help-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .help-page h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .help-page ul {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  
+  .help-page ul li {
+    list-style: disc;
+    margin-bottom: 5px;
+  }
+  

@@ -1,0 +1,41 @@
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #004d40;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    animation: fadeInOut 3s forwards;
+    z-index: 1003; /* Выше модальных окон */
+  }
+  
+  .toast.success {
+    background-color: #004d40;
+  }
+  
+  .toast.error {
+    background-color: #d32f2f;
+  }
+  
+  .toast.warning {
+    background-color: #ffa000;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    10%, 90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+  

@@ -1,0 +1,331 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; 
+}
+
+.resume-editor {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  align-items: stretch;
+  background-color: #fff;
+}
+
+.editor-form {
+  flex: 1; 
+  padding: 0;
+  background-color: #fff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-preview {
+  flex: 1;
+  background-color: #fff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Панель */
+.panel {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 0;
+  margin: 0;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee; 
+  width: 100%;
+  position: relative;
+  min-height: 10px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.panel-header h3 {
+  margin: 0;
+  font-size: 16px; /* Заголовок чуть крупнее */
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.panel-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-left: auto;
+  width: 12px;
+  height: 12px;
+  position: relative;
+}
+
+.panel-toggle-btn::before {
+  content: "";
+  display: inline-block;
+  width: 0; 
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+  transition: transform 0.3s;
+}
+
+.panel-header-open .panel-toggle-btn::before {
+  transform: rotate(180deg);
+}
+
+.panel-header-closed {
+  background-color: #fff;
+  color: #000;
+}
+
+.panel-header-open {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.panel-body {
+  background: #fff;
+  padding: 20px;
+  font-size: 14px; /* Базовый размер шрифта для содержимого */
+}
+
+.search-container {
+  margin-bottom: 10px;
+  min-width: 500px;
+  
+}
+
+.search-input {
+  width: 50%; 
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px; /* Размер текста в поиске */
+}
+
+.multi-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+/* Единый размер текста для чекбоксов, характеристик и списков */
+.checkbox-item,
+.checkbox-label-text,
+.characteristics-list,
+.summary-list,
+.class-characteristics-group,
+.characteristic-item,
+.preview-list li {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox-item input[type='checkbox'] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checkbox-item input[type='checkbox']:checked {
+  background-color: #00332e;
+  border-color: #00332e;
+}
+
+.checkbox-item input[type='checkbox']:checked::after {
+  content: '✓';
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+}
+
+.checkbox-label-text {
+  cursor: pointer;
+  white-space: normal; 
+  overflow: visible;
+}
+
+/* Блоки характеристик, шкалы и итогов */
+.class-characteristics-group {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 0;
+  background: #fafafa;
+}
+
+.class-characteristics-group .class-title {
+  background: #fff;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.class-characteristics-group .class-title h4 {
+  margin: 0;
+  font-size: 15px; /* заголовок класса чуть крупнее базового текста */
+  font-weight: bold;
+}
+
+.grid-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px 20px;
+}
+
+.characteristics-list li,
+.summary-list li {
+  margin-bottom: 10px;
+}
+
+.characteristic-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid transparent;
+  white-space: normal; 
+  overflow: visible;
+}
+
+.characteristic-item.scale-chosen {
+  border: 1px solid #00332e; 
+  background: #cce7e2; 
+}
+
+.characteristic-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: normal;
+  overflow: visible;
+}
+
+.characteristic-label input[type='checkbox'] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.characteristic-label input[type='checkbox']:checked {
+  background-color: #00332e;
+  border-color: #00332e;
+}
+
+.characteristic-label input[type='checkbox']:checked::after {
+  content: '✓';
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+}
+
+.scale-select {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px; /* Шрифт в select тоже 14px */
+}
+
+.preview-content h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 16px; /* Заголовок превью */
+}
+
+.preview-class-block {
+  background-color: #f4f4f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.preview-class-block h4 {
+  margin-top: 0;
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.preview-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.preview-list li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.characteristic-chosen {
+  font-weight: bold;
+}
+
+.characteristics-list,
+.summary-list,
+.preview-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.characteristics-list li,
+.summary-list li,
+.preview-list li {
+  list-style: none;
+}
+
+.a4-page h2 {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  max-width: 100%;
+  display: inline-block; /* чтобы ширина применилась */
+  width: 90%; /* задайте ширину меньше 100%, чтобы было место для переноса */
+}
+
+/* global.css */
+.indented-sentence {
+  margin-left: 20px; /* Отступ слева */
+  /* Вы можете также использовать padding-left: 20px; */
+  /* Для многострочных предложений используйте text-indent, если необходимо */
+}

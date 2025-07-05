@@ -1,0 +1,26 @@
+[Unit]
+Description=Scenario Questionnaire Node.js server
+# Говорим, что нужно дождаться сети
+After=network.target
+
+[Service]
+# Обычный «simple»-тип, так как Node.js остаётся на переднем плане
+Type=simple
+
+# Запуск Node.js с указанием скрипта server.js
+ExecStart=/usr/bin/node /var/va/scenario_questionnaire/server.js
+
+# Указываем рабочую директорию
+WorkingDirectory=/var/va/scenario_questionnaire
+
+# Запуск от конкретного пользователя / группы (не от root)
+User=vadev
+Group=trusted
+
+# Автоперезапуск, если процесс упал
+Restart=on-failure
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
