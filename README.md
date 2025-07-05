@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+## Описание
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Resume Editor** — веб-приложение для создания и управления профессиональными резюме.  
+Название проекта указано как `"resume-editor"` в `package.json`  
+Приложение было сгенерировано с помощью Create React App 
 
-## Available Scripts
+## Возможности
 
-In the project directory, you can run:
+- Интерактивный редактор резюме с превью в реальном времени на базе React 18.2.0
+- Компоненты Material UI (MUI) для гибкой и адаптивной вёрстки (`@mui/material` ^6.4.0) 
+- Валидация форм через Formik (`formik` ^2.4.6) и Yup (`yup` ^1.5.0) 
+- Управление датами и форматирование с помощью date-fns (`date-fns` ^4.1.0)
+- Хранение и отправка данных на сервер через Express 4.21.2 (`express` ^4.21.2)
+- Сохранение данных в PostgreSQL с помощью драйвера `pg` (^8.13.1) 
+- Отправка готовых резюме на email через Nodemailer (`nodemailer` ^6.9.16)   
+- Обработка CORS запросов (`cors` ^2.8.5) и парсинг cookies (`cookie-parser` ^1.4.7)  
+- HTTP-прокси для разработки (`http-proxy-middleware` ^3.0.3) и клиентские cookies (`js-cookie` ^3.0.5) 
+- Метрики производительности в браузере через `web-vitals` ^4.2.4
 
-### `npm start`
+## Технологический стек
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Фронтенд:**  
+  - React 18.2.0, React DOM 18.2.0  
+  - React Router Dom 7.0.2
+  - Create React App (react-scripts 5.0.1) 
+  - @emotion/react 11.14.0, @emotion/styled 11.14.0 
+  - Material UI (@mui/material 6.4.0) 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Бэкенд:**  
+  - Node.js + Express 4.21.2 
+  - PostgreSQL (pg 8.13.1) 
+  - Nodemailer 6.9.16 
+  - cookie-parser 1.4.7, cors 2.8.5  
+  - http-proxy-middleware 3.0.3 
 
-### `npm test`
+- **Утилиты и валидация:**  
+  - Formik 2.4.6, Yup 1.5.0
+  - date-fns 4.1.0 
+  - js-cookie 3.0.5  
+  - web-vitals 4.2.4   
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Установка и запуск
 
-### `npm run build`
+1. Клонировать репозиторий и перейти в каталог:  
+   git clone https://github.com/MyStaRiK/Project.git
+   cd Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2 Установить зависимости и запустить в режиме разработки:
+    npm install
+    npm start       
+    
+3 Сборка для продакшена:
+    npm run build    
+    
+4 Тестирование:
+    npm test        
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    
+Скрипты (из package.json)
+"scripts": {
+  "start": "react-scripts start",   
+  "build": "react-scripts build",    
+  "test":  "react-scripts test",     
+  "eject": "react-scripts eject"     
+}
 
-### `npm run eject`
+Основные зависимости из `package.json`:
+    "dependencies": {
+      "@emotion/react": "^11.14.0",
+      "@emotion/styled": "^11.14.0",
+      "@mui/material": "^6.4.0",
+      "cookie-parser": "^1.4.7",
+      "cors": "^2.8.5",
+      "date-fns": "^4.1.0",
+      "express": "^4.21.2",
+      "formik": "^2.4.6",
+      "http-proxy-middleware": "^3.0.3",
+      "js-cookie": "^3.0.5",
+      "nodemailer": "^6.9.16",
+      "pg": "^8.13.1",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-router-dom": "^7.0.2",
+      "react-scripts": "5.0.1",
+      "web-vitals": "^4.2.4",
+      "yup": "^1.5.0"
+    }
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 
+ Основные метаданные:
+{
+  "name": "resume-editor",    
+  "version": "0.1.0",         
+  "private": true
+}
